@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="access.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Access</title>
+</head>
+<body>
+    <header>
+        <div class="first-hd">
+            <div class="hd-logo">
+                <a href="./index.html"><img src="./images/logo (1).png" alt=""></a>
+            </div>
+            <div class="first-hd-message">
+                <p>猫と過ごす、安らかな時間。</p>
+            </div>
+        </div>
+
+        <div class="scroll-none">
+            <div class="scroll-hd">
+                <div class="scroll-icon">
+                    <a href="./index.html"><img src="./images/logo (1).png" alt=""></a>
+                </div>
+                <nav class="scroll-nav">
+                    <ul class="scroll-list">
+                        <li><a href="./concept.html">Consept</a></li>
+                        <li><a href="./survice.html">Survice</a></li>
+                        <li><a href="./access.html">Access</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="top-r">
+            <div class="button">
+                <span></span>
+            </div>
+        </div>
+        <nav class="slide-nav">
+            <ul>
+                <li><a href="./concept.html">Consept</a></li>
+                <li><a href="./survice.html">Survice</a></li>
+                <li><a href="./access.html">Access</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+            <div class="mn-top-img">
+                <section class="mn-top">
+                    <div class="mn-top-title">
+                        <h2>ACCESS</h2>
+                    </div>
+                    <div class="mn-top-pan">
+                        <a href="./index.html">Top</a>
+                        <p>Access</p>
+                    </div>
+                    <div class="mn-top-wave">
+                        <img src="./images/wave-9.png" alt="">
+                    </div>
+                </section>
+            </div>
+
+            <section class="second-section">
+                <div class="sv-catchcopy">
+                    <h2>Easy to get access.</h2>
+                    <p>駅からすぐ近く</p>
+                </div>
+
+                <div class="google-map-box">
+                    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4593.568459145922!2d141.35252668780467!3d43.068018760398274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1664850796264!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="as-info-box">
+                    <div class="as-info">
+                        <dl>
+                            <dt>所在地</dt>
+                            <dd>北海道札幌市猫区猫１条猫１丁目１－１</dd>
+                        </dl>
+                        <dl>
+                            <dt>営業時間</dt>
+                            <dd>10：00 ~ 20：00</dd>
+                        </dl>
+                        <dl>
+                            <dt>定休日</dt>
+                            <dd>水曜日・年末年始</dd>
+                        </dl>
+                        <dl>
+                            <dt>電話番号</dt>
+                            <dd>0123-456-789</dd>
+                        </dl>
+                        <dl>
+                            <dt>電車でお越しの方</dt>
+                            <dd>札幌駅猫口から出てそのまま２分ほど歩くと
+                                左手に猫の看板が見えますので、その下のお店です。</dd>
+                        </dl>
+                        <dl>
+                            <dt>お車でお越しの方</dt>
+                            <dd>大変申し訳ございませんが当店駐車場がございませんので
+                                、近くの駐車場にとめられるか公共交通機関をご利用してお越しください。
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>予約に関して</dt>
+                            <dd>当店予約は電話とメールのみとなっております。
+                                メールの場合は<a href="./contact.html">こちら</a>のコンタクトフォームから。
+                                お電話の場合は10：00 ~ 19：00の間でいただけると幸いです。
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </section>
+    </main>
+    <footer>
+        <div class="ft-area">
+            <ul class="ft-list">
+                <li><a href="#">よくある質問</a></li>
+                <li><a href="#">注意事項</a></li>
+                <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+            <div class="copy-right">
+                <p>Copyright gorogoro All Rights Reserved</p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+
+        $(window).scroll(function(){
+            $hdTop = $(this).scrollTop();
+            if($hdTop >= 76) {
+                $(".scroll-none").fadeIn(500);
+            } else {
+                $(".scroll-none").fadeOut(500);
+            }
+        })
+
+        $(window).scroll(function(){
+            var $top = $(window).scrollTop();
+            var $hdH = $(".first-hd").outerHeight(true);
+
+            console.log($hdH);
+
+            if($top >= $hdH){
+                $(".first-hd").addClass("hd-off");
+                $(".button").addClass("btn-on");
+            } else {
+                $(".first-hd").removeClass("hd-off");
+                $(".button").removeClass("btn-on");
+            }
+        })
+
+        $(".button").click(function(){
+            $(this).toggleClass("active");
+            $(".slide-nav").toggleClass("scroll-0");
+        });
+
+    </script>
+</body>
+</html>

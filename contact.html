@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Access</title>
+</head>
+<body>
+    <header>
+        <div class="first-hd">
+            <div class="hd-logo">
+                <a href="./index.html"><img src="./images/logo (1).png" alt=""></a>
+            </div>
+            <div class="first-hd-message">
+                <p>猫と過ごす、安らかな時間。</p>
+            </div>
+        </div>
+
+        <div class="scroll-none">
+            <div class="scroll-hd">
+                <div class="scroll-icon">
+                    <a href="./index.html"><img src="./images/logo (1).png" alt=""></a>
+                </div>
+                <nav class="scroll-nav">
+                    <ul class="scroll-list">
+                        <li><a href="./concept.html">Consept</a></li>
+                        <li><a href="./survice.html">Survice</a></li>
+                        <li><a href="./access.html">Access</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="top-r">
+            <div class="button">
+                <span></span>
+            </div>
+        </div>
+        <nav class="slide-nav">
+            <ul>
+                <li><a href="./concept.html">Consept</a></li>
+                <li><a href="./survice.html">Survice</a></li>
+                <li><a href="./access.html">Access</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+            <div class="mn-top-img">
+                <section class="mn-top">
+                    <div class="mn-top-title">
+                        <h2>CONTACT</h2>
+                    </div>
+                    <div class="mn-top-pan">
+                        <a href="./index.html">Top</a>
+                        <p>Access</p>
+                    </div>
+                    <div class="mn-top-wave">
+                        <img src="./images/wave-9.png" alt="">
+                    </div>
+                </section>
+            </div>
+
+            <section class="second-section">
+                <div class="sv-catchcopy">
+                    <h2>Ask us anithing.</h2>
+                    <p>お気軽にご相談ください</p>
+                </div>
+            </section>
+
+            <section class="contact-form">
+                <div class="contact-item">
+                    <input type="text" placeholder="お名前">
+                </div>
+                <div class="contact-item">
+                    <input type="text" placeholder="メールアドレス">
+                </div>
+                <div class="contact-item">
+                    <textarea name="contact-form1" id="" placeholder="お問い合わせ内容(内容によっては返信できかねる場合がございます)"></textarea>
+                </div>
+                <div class="contact-button contact-item">
+                    <button>送信</button>
+                </div>
+            </section>
+
+
+
+    </main>
+    
+    
+    
+    <footer>
+        <div class="ft-area">
+            <ul class="ft-list">
+                <li><a href="#">よくある質問</a></li>
+                <li><a href="#">注意事項</a></li>
+                <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+            <div class="copy-right">
+                <p>Copyright gorogoro All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        $(window).scroll(function(){
+            $hdTop = $(this).scrollTop();
+            if($hdTop >= 76) {
+                $(".scroll-none").fadeIn(500);
+            } else {
+                $(".scroll-none").fadeOut(500);
+            }
+        })
+
+        $(window).scroll(function(){
+            var $top = $(window).scrollTop();
+            var $hdH = $(".first-hd").outerHeight(true);
+
+            console.log($hdH);
+
+            if($top >= $hdH){
+                $(".first-hd").addClass("hd-off");
+                $(".button").addClass("btn-on");
+            } else {
+                $(".first-hd").removeClass("hd-off");
+                $(".button").removeClass("btn-on");
+            }
+        })
+
+        $(".button").click(function(){
+            $(this).toggleClass("active");
+            $(".slide-nav").toggleClass("scroll-0")
+        })
+
+    </script>
+</body>
+</html>

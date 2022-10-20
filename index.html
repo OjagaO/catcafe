@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>猫カフェ～ごろごろ～</title>
+</head>
+<body>
+    <header>
+        <div class="first-hd">
+            <div class="hd-logo">
+                <a href="./index.html"><img src="./images/logo (1).png" alt=""></a>
+            </div>
+            <div class="first-hd-message">
+                <p>猫と過ごす、安らかな時間。</p>
+            </div>
+        </div>
+
+        <div class="scroll-none">
+            <div class="scroll-hd">
+                <div class="scroll-icon">
+                    <a href="./index.html"><img src="./images/logo (1).png" alt=""></a>
+                </div>
+                <nav class="scroll-nav">
+                    <ul class="scroll-list">
+                        <li><a href="./concept.html">Consept</a></li>
+                        <li><a href="./survice.html">Survice</a></li>
+                        <li><a href="./access.html">Access</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="top-r">
+            <div class="button">
+                <span></span>
+            </div>
+        </div>
+        <nav class="slide-nav">
+            <ul>
+                <li><a href="./concept.html">Consept</a></li>
+                <li><a href="./survice.html">Survice</a></li>
+                <li><a href="./access.html">Access</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav> 
+    </header>
+    <main>
+        <div class="main-area">
+            <div class="main-img">
+                <div class="main-title">
+                    <p>＝　Sapporo's Cat cafe.　＝</p>
+                    <h2>猫カフェ～ごろごろ～</h2>
+                    <div class="wave"><img src="./images/wave-9.png" alt=""></div>
+                </div>
+                 
+            </div>
+            <nav class="main-nav">
+                <ul class="main-list">
+                    <li><a href="./concept.html">Consept</a></li>
+                    <li><a href="./survice.html">Survice</a></li>
+                    <li><a href="./access.html">Access</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </nav>   
+        </div>
+    </main>
+    <footer>
+        <div class="ft-area">
+            <ul class="ft-list">
+                <li><a href="#">よくある質問</a></li>
+                <li><a href="#">注意事項</a></li>
+                <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+            <div class="copy-right">
+                <p>Copyright gorogoro All Rights Reserved</p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+
+        $(window).scroll(function(){
+            $hdTop = $(this).scrollTop();
+            if($hdTop >= 76) {
+                $(".scroll-none").fadeIn(500);
+            } else {
+                $(".scroll-none").fadeOut(500);
+            }
+        })
+
+        $(window).scroll(function(){
+            var $top = $(window).scrollTop();
+            var $hdH = $(".first-hd").outerHeight(true);
+
+            console.log($hdH);
+
+            if($top >= $hdH){
+                $(".first-hd").addClass("hd-off");
+                $(".button").addClass("btn-on");
+            } else {
+                $(".first-hd").removeClass("hd-off");
+                $(".button").removeClass("btn-on");
+            }
+        })
+
+        $(".button").click(function(){
+            $(this).toggleClass("active");
+            $(".slide-nav").toggleClass("scroll-0");
+        });
+
+    </script>
+</body>
+</html>
